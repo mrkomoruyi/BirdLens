@@ -6,13 +6,13 @@ import torch
 import torchvision.transforms.v2 as transforms
 
 # Streamlit page configuration
-st.set_page_config(layout="centered", page_title="Bird Recognition With BirdGPT",menu_items={
-    'Report a bug': "https://github.com/mrkomoruyi/BirdGPT/issues/new", 
-    'About': "#### This is BirdGPT. An AI bird recognition model. Upload or provide link to an image of a bird and find out it's name! Cool right? :smile:"})
+st.set_page_config(layout="centered", page_title="Bird Recognition With BirdLens",menu_items={
+    'Report a bug': "https://github.com/mrkomoruyi/BirdLens/issues/new", 
+    'About': "#### This is BirdLens. An AI bird recognition model. Upload or provide link to an image of a bird and find out it's name! :smile:"})
 
-st.title("Bird Recognition With :blue[BirdGPT]", anchor='title')
+st.title("Bird Recognition With :blue[BirdLens]", anchor='title')
 st.write("### :bird: Upload an image of any bird and find out its name!")
-st.warning('BirdGPT uses AI! Check for mistakes')
+st.warning('BirdLens uses AI! Check for mistakes')
 
 # Load the pre-trained image recognition model
 model = torch.jit.load("BirdGPT scripted.pth", map_location='cpu')
@@ -599,3 +599,4 @@ def get_prediction(input_tensor):
 if uploaded_image or uploaded_url:
     input_tensor = get_input()
     get_prediction(input_tensor)
+
