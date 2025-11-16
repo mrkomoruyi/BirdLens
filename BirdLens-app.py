@@ -15,7 +15,7 @@ st.write("### :bird: Upload an image of any bird and find out its name!")
 st.warning('BirdLens uses AI! Check for mistakes')
 
 # Load the pre-trained image recognition model
-model = torch.jit.load("BirdGPT scripted.pth", map_location='cpu')
+model = torch.jit.load("BirdLens model scripted.pth", map_location='cpu')
 model.eval()
 
 classes = ['ABBOTTS BABBLER',
@@ -599,4 +599,5 @@ def get_prediction(input_tensor):
 if uploaded_image or uploaded_url:
     input_tensor = get_input()
     get_prediction(input_tensor)
+
 
